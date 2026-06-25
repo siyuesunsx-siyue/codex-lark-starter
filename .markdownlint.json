@@ -1,0 +1,16 @@
+{
+  "_comment": "markdownlint config for codex-lark-starter.  Relaxed for a documentation-first starter kit.  See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md",
+
+  "default": true,
+
+  "MD013": false,
+  "MD024": false,
+  "MD026": false,
+  "MD033": false,
+  "MD036": false,
+  "MD046": false,
+  "MD048": false,
+  "MD055": false,
+  "MD057": false,
+  "MD058": false
+}
