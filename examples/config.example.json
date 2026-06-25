@@ -1,0 +1,34 @@
+{
+  "_comment": "codex-lark-starter configuration. Copy to config.json and fill in your values.",
+  "lark": {
+    "platform": "feishu",
+    "appId": "cli_xxxxxxxxxxxxxxxx",
+    "appSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "verificationToken": "",
+    "encryptKey": ""
+  },
+  "openai": {
+    "apiKey": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "model": "gpt-4o",
+    "maxTokens": 4096,
+    "temperature": 0.7
+  },
+  "bridge": {
+    "host": "127.0.0.1",
+    "port": 8765,
+    "webhookPath": "/webhook/lark",
+    "concurrency": 5,
+    "requestTimeoutMs": 120000,
+    "retryDelay": 1000,
+    "maxRetries": 3
+  },
+  "logging": {
+    "level": "info",
+    "logContent": false,
+    "outputDir": "./logs"
+  },
+  "rateLimit": {
+    "messagesPerMinute": 30,
+    "burstSize": 5
+  }
+}

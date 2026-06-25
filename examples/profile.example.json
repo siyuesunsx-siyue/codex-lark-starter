@@ -1,0 +1,21 @@
+{
+  "_comment": "Codex CLI user profile. Copy to ~/.codex/profile.json or set via CODEX_PROFILE env var.",
+  "preferences": {
+    "editor": "vim",
+    "theme": "default",
+    "language": "en",
+    "timezone": "Asia/Shanghai"
+  },
+  "aliases": {
+    "summarize": "Summarize the following content in 3 bullet points:",
+    "explain": "Explain this code in simple terms:"
+  },
+  "history": {
+    "enabled": true,
+    "maxEntries": 100,
+    "savePath": "~/.codex/history.jsonl"
+  },
+  "analytics": {
+    "optOut": false
+  }
+}

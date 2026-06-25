@@ -1,0 +1,38 @@
+{
+  "_comment": "Codex CLI workspace configuration. Copy to workspace.json and customize.",
+  "name": "lark-bridge-workspace",
+  "description": "Workspace for the Feishu/Lark → Codex bridge agent",
+  "model": "gpt-4o",
+  "tools": {
+    "web_search": {
+      "enabled": true,
+      "provider": "openai"
+    },
+    "filesystem": {
+      "enabled": true,
+      "allowedPaths": [
+        "./workspace",
+        "/tmp/codex-bridge"
+      ]
+    },
+    "exec": {
+      "enabled": true,
+      "allowedCommands": [
+        "echo",
+        "cat",
+        "ls",
+        "date",
+        "curl",
+        "jq",
+        "python3",
+        "node"
+      ],
+      "sandbox": true,
+      "timeoutMs": 30000
+    }
+  },
+  "mcpServers": [],
+  "systemPrompt": "You are an AI assistant integrated into a Feishu/Lark channel. Be helpful, concise, and respond in the same language as the user's message.",
+  "maxContextTokens": 128000,
+  "autoCompactThreshold": 0.85
+}
