@@ -43,6 +43,7 @@ See [examples/workspace.example.json](../examples/workspace.example.json).
 ## How many concurrent conversations can one bridge handle?
 
 Approximately 10–50, depending on:
+
 - OpenAI model latency
 - Complexity of prompts
 - Available CPU / memory on the host

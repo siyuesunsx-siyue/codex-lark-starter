@@ -41,7 +41,7 @@ done.
 
 ## Architecture
 
-```
+```text
 ┌──────────────┐     ┌─────────────────────┐     ┌───────────┐     ┌──────────┐
 │  Feishu/Lark │────▶│ lark-channel-bridge │────▶│ Codex CLI │────▶│  OpenAI  │
 │   (channel)  │◀────│     (WebSocket)      │◀────│  (agent)  │◀────│   (API)  │
@@ -101,7 +101,7 @@ For a detailed walkthrough, see [docs/quick-start.md](docs/quick-start.md).
 
 ## Repository Structure
 
-```
+```text
 .
 ├── README.md                       ← You are here
 ├── LICENSE                         ← MIT

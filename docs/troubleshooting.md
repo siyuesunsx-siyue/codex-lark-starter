@@ -57,7 +57,9 @@ The bridge logs:
 ```text
 [agent] ERROR: OpenAI API returned 401 — invalid API key
 ```
+
 or
+
 ```text
 [agent] ERROR: OpenAI API returned 429 — rate limit exceeded
 ```

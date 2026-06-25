@@ -2,7 +2,7 @@
 
 ## High-Level Overview
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────────┐
 │                           Feishu / Lark                              │
 │                                                                      │
@@ -58,6 +58,7 @@ Messages arrive via one of two channels:
 | Bot WebSocket | WSS (persistent) | Production, multi-bot, low-latency |
 
 In both cases the bridge receives a JSON payload containing:
+
 - `message_id` — unique per message
 - `chat_id` — conversation identifier
 - `sender_id` / `sender_name` — who sent it
@@ -80,7 +81,7 @@ The bridge is a single Node.js process responsible for:
 
 **Lifecycle states:**
 
-```
+```text
 [stopped] ──start──▶ [starting] ──ready──▶ [running]
     ▲                    │                     │
     │                    ▼                     ▼
@@ -146,7 +147,7 @@ the model being used. Supported configuration values control:
 
 ## Data Flow (End-to-End)
 
-```
+```text
    User              Lark Server          Bridge              Codex             OpenAI
     │                    │                   │                   │                  │
     │  "hello world"     │                   │                   │                  │

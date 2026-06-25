@@ -62,7 +62,7 @@ The other fields have sensible defaults and can be left as-is.
 
 Expected output:
 
-```
+```text
 [bridge] Starting ...
 [bridge] PID: 12345
 [bridge] Listening on 127.0.0.1:8765
