@@ -237,7 +237,53 @@ the following mechanisms:
   the daemon manager reads the user environment before spawning the
   bridge process.
 
-This document does not provide the implementation for these yet. It will
-be addressed in a future release. For now, use the foreground-mode
-diagnostic path described above to confirm the proxy configuration is
-correct.
+For a complete systemd setup guide including the service unit file,
+`proxy.env`, daemon management commands, and verified results, see
+[systemd User Service Deployment](../deployment/systemd.md).
+
+---
+
+## Recommended Configuration
+
+The recommended way to pass proxy variables to the systemd service is via
+an `EnvironmentFile`:
+
+```ini
+EnvironmentFile=%h/.config/lark-channel-bridge/proxy.env
+```
+
+Do **not** write proxy variables directly inside the service unit file.
+Use the external `proxy.env` file instead.
+
+### Why use EnvironmentFile
+
+**Easier maintenance.** When your proxy address changes (new VPN, office
+relocation, credential rotation), you update one file — `proxy.env` —
+and run `systemctl --user restart`. No need to edit and re-deploy the
+service unit.
+
+**Shared by multiple tools.** A single `proxy.env` file in a standard
+location can be referenced by Codex, Cursor, OpenCode, or any other
+systemd service that needs proxy connectivity. You maintain one source of
+truth.
+
+**Clean separation.** Service definitions describe *what* runs and *how*
+it should behave on failure. Environment files describe *where* network
+traffic should go. Keeping them separate follows the Unix principle of
+doing one thing well.
+
+### Structure
+
+```text
+~/.config/lark-channel-bridge/
+├── proxy.env        ← proxy variables (shared, 8 lines)
+└── ...              ← other bridge config
+```
+
+```text
+~/.config/systemd/user/
+└── lark-channel-bridge.bot.codex.service  ← references proxy.env via EnvironmentFile
+```
+
+For the complete `proxy.env` contents and step-by-step deployment
+instructions, see [systemd User Service Deployment](../deployment/systemd.md).
