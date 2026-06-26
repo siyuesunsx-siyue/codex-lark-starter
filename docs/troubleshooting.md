@@ -91,6 +91,11 @@ The bridge is running (no errors in logs) but messages go unanswered.
    `im:message:send_as_bot` scopes.
 4. **Look for silent failures** — Check `logs/bridge.log` for any
    ingestion errors.
+5. **Check proxy configuration** — If you work behind an HTTP proxy
+   (corporate network, VPN, or WSL behind a Windows proxy), bridge and
+   Codex traffic may have conflicting proxy requirements. See
+   [Proxy and Daemon](troubleshooting/proxy-and-daemon.md) for detailed
+   diagnosis steps.
 
 ---
 
@@ -148,3 +153,10 @@ All logs are written to `logs/`:
 | `logs/access.log` | Request/response metadata (user content redacted) |
 
 Increase log verbosity by setting `"logLevel": "debug"` in `config.json`.
+
+---
+
+## Related Documents
+
+- [Proxy and Daemon](troubleshooting/proxy-and-daemon.md) — Proxy
+  environment variables for lark-channel-bridge + Codex in WSL.
