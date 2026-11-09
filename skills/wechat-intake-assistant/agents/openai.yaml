@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信资料归档助手"
+  short_description: "从微信收集聊天资料，按名单归档到飞书并可选推送进度卡片"
+  default_prompt: "帮我从微信聊天中收集指定资料，匹配名单，归档到飞书并更新索引。先确认要启用哪些可选模块。"
